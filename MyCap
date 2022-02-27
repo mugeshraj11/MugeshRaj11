@@ -1,0 +1,83 @@
+import java.util.Scanner;
+class Matrix{
+    static int n1,n2,n3,n4;
+    void Addition(int B1[][],int B2[][])
+    {
+        int[][] Amat=new int[n1][n2];
+        for(int i=0;i<n1;i++)
+        {
+            for(int j=0;j<n2;j++)
+            {
+                Amat[i][j]=B1[i][j]+B2[i][j];
+            }
+        }
+        System.out.println("The Sum of the given Matrix is:");
+        for(int i=0;i<n1;i++)
+        {
+            for(int j=0;j<n2;j++)
+            {
+                System.out.print(Amat[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    void Multiplication(int A1[][],int A2[][])
+    {
+        int[][] Mult=new int[n1][n4];
+        for(int i=0;i<n1;i++)
+        {
+            for(int j=0;j<n2;j++)
+            {
+                Mult[i][j]=0;
+                for(int k=0;k<n3;k++)
+                {
+                    Mult[i][j]+=A1[i][k]*A2[k][j];
+                }
+            
+            }
+            
+        }
+        System.out.println("The Product of the Given Matrix is:");
+        for(int i=0;i<n1;i++)
+        {
+            for(int j=0;j<n2;j++)
+            {
+                System.out.print(Mult[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+
+    }
+    public static void main(String[] args){
+    Scanner a = new Scanner(System.in);
+    System.out.println("Enter the Size of the matrix");
+    n1=a.nextInt();
+    n2=a.nextInt();
+    int[][] M1=new int[n1][n2];
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n2;j++)
+        {
+            M1[i][j]=a.nextInt();
+        }
+    }
+    System.out.println("Enter the Size of the matrix");
+    n3=a.nextInt();
+    n4=a.nextInt();
+    int[][] M2=new int[n3][n4];
+    for(int i=0;i<n3;i++)
+    {
+        for(int j=0;j<n4;j++)
+        {
+            M2[i][j]=a.nextInt();
+        }
+    }
+    Matrix obj=new Matrix();
+    obj.Addition(M1,M2);
+    obj.Multiplication(M1,M2);
+    
+
+    
+    }
+}
