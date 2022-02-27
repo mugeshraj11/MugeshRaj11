@@ -74,10 +74,23 @@ class Matrix{
         }
     }
     Matrix obj=new Matrix();
-    obj.Addition(M1,M2);
-    obj.Multiplication(M1,M2);
-    
+    System.out.println("Enter 1 for the sum,2 for the product of the matrices");
+    int n=a.nextInt();
+    switch(n)
+    {
+        case 1:
+        obj.Addition(M1,M2);
+        break;
 
+        case 2:
+        obj.Multiplication(M1,M2);
+        break;
+
+        default:
+        System.out.println("Wrong Option");
+
+    }
+    
     
     }
 }
