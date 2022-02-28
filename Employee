@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Employee{
+    static String name;
+   static String Address;
+    static int Year;
+static void Print(String Nam,String add,int ear){
+    System.out.println("Name\t"+"Year\t"+"Address\n"+Nam+"\t"+ear+"\t"+add);
+}
+    public static void main(String[] args){
+        Scanner a=new Scanner(System.in);
+        System.out.println("Enter the name");
+        name=a.nextLine();
+        System.out.println("Enter the address");
+        Address=a.nextLine();
+        System.out.println("Enter the Year of Joining");
+        Year=a.nextInt();
+        
+        Employee ob=new Employee();
+        ob.Print(name,Address,Year);
+
+
+    }
+}
